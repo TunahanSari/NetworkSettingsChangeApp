@@ -1,6 +1,6 @@
 ﻿namespace NetworkSettingsChangeApp
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,95 +28,114 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.ProxyOnBtn = new System.Windows.Forms.Button();
-            this.eventListBox = new System.Windows.Forms.ListBox();
-            this.proxyGroupBox = new System.Windows.Forms.GroupBox();
-            this.proxyAdapterTB = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.normalAdapterTB = new System.Windows.Forms.TextBox();
             this.ProxyOffBtn = new System.Windows.Forms.Button();
-            this.proxyGroupBox.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.progressTextLabel = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // ProxyOnBtn
             // 
-            this.ProxyOnBtn.Location = new System.Drawing.Point(12, 13);
+            this.ProxyOnBtn.BackColor = System.Drawing.Color.DarkGreen;
+            this.ProxyOnBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ProxyOnBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProxyOnBtn.ForeColor = System.Drawing.Color.White;
+            this.ProxyOnBtn.Location = new System.Drawing.Point(3, 3);
             this.ProxyOnBtn.Name = "ProxyOnBtn";
-            this.ProxyOnBtn.Size = new System.Drawing.Size(75, 23);
+            this.ProxyOnBtn.Size = new System.Drawing.Size(305, 125);
             this.ProxyOnBtn.TabIndex = 0;
             this.ProxyOnBtn.Text = "ProxyOn";
-            this.ProxyOnBtn.UseVisualStyleBackColor = true;
+            this.ProxyOnBtn.UseVisualStyleBackColor = false;
             this.ProxyOnBtn.Click += new System.EventHandler(this.EnableProxy);
-            // 
-            // eventListBox
-            // 
-            this.eventListBox.FormattingEnabled = true;
-            this.eventListBox.Location = new System.Drawing.Point(13, 104);
-            this.eventListBox.Name = "eventListBox";
-            this.eventListBox.Size = new System.Drawing.Size(603, 329);
-            this.eventListBox.TabIndex = 1;
-            // 
-            // proxyGroupBox
-            // 
-            this.proxyGroupBox.Controls.Add(this.proxyAdapterTB);
-            this.proxyGroupBox.Location = new System.Drawing.Point(224, 13);
-            this.proxyGroupBox.Name = "proxyGroupBox";
-            this.proxyGroupBox.Size = new System.Drawing.Size(193, 55);
-            this.proxyGroupBox.TabIndex = 2;
-            this.proxyGroupBox.TabStop = false;
-            this.proxyGroupBox.Text = "Proxy\'li Adaptör";
-            // 
-            // proxyAdapterTB
-            // 
-            this.proxyAdapterTB.Location = new System.Drawing.Point(6, 19);
-            this.proxyAdapterTB.Name = "proxyAdapterTB";
-            this.proxyAdapterTB.Size = new System.Drawing.Size(181, 20);
-            this.proxyAdapterTB.TabIndex = 0;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.normalAdapterTB);
-            this.groupBox2.Location = new System.Drawing.Point(423, 13);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(193, 55);
-            this.groupBox2.TabIndex = 3;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Proxysiz Adaptör";
-            // 
-            // normalAdapterTB
-            // 
-            this.normalAdapterTB.Location = new System.Drawing.Point(6, 19);
-            this.normalAdapterTB.Name = "normalAdapterTB";
-            this.normalAdapterTB.Size = new System.Drawing.Size(181, 20);
-            this.normalAdapterTB.TabIndex = 1;
+            this.ProxyOnBtn.MouseEnter += new System.EventHandler(this.ProxyOnBtn_MouseEnter);
+            this.ProxyOnBtn.MouseLeave += new System.EventHandler(this.ProxyOnBtn_MouseLeave);
             // 
             // ProxyOffBtn
             // 
-            this.ProxyOffBtn.Location = new System.Drawing.Point(13, 42);
+            this.ProxyOffBtn.BackColor = System.Drawing.Color.DarkRed;
+            this.ProxyOffBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ProxyOffBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProxyOffBtn.ForeColor = System.Drawing.Color.White;
+            this.ProxyOffBtn.Location = new System.Drawing.Point(314, 3);
             this.ProxyOffBtn.Name = "ProxyOffBtn";
-            this.ProxyOffBtn.Size = new System.Drawing.Size(75, 23);
+            this.ProxyOffBtn.Size = new System.Drawing.Size(305, 125);
             this.ProxyOffBtn.TabIndex = 4;
             this.ProxyOffBtn.Text = "ProxyOff";
-            this.ProxyOffBtn.UseVisualStyleBackColor = true;
+            this.ProxyOffBtn.UseVisualStyleBackColor = false;
             this.ProxyOffBtn.Click += new System.EventHandler(this.DisableProxy);
+            this.ProxyOffBtn.MouseEnter += new System.EventHandler(this.ProxyOffBtn_MouseEnter);
+            this.ProxyOffBtn.MouseLeave += new System.EventHandler(this.ProxyOffBtn_MouseLeave);
             // 
-            // Form1
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.ProxyOnBtn, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.ProxyOffBtn, 1, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 131F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(622, 131);
+            this.tableLayoutPanel1.TabIndex = 5;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.progressBar1, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.progressTextLabel, 0, 1);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 3;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(628, 177);
+            this.tableLayoutPanel2.TabIndex = 6;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(3, 160);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(622, 14);
+            this.progressBar1.Step = 25;
+            this.progressBar1.TabIndex = 6;
+            // 
+            // progressTextLabel
+            // 
+            this.progressTextLabel.AutoSize = true;
+            this.progressTextLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.progressTextLabel.Location = new System.Drawing.Point(3, 137);
+            this.progressTextLabel.Name = "progressTextLabel";
+            this.progressTextLabel.Size = new System.Drawing.Size(622, 20);
+            this.progressTextLabel.TabIndex = 7;
+            this.progressTextLabel.Text = "label1";
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(628, 444);
-            this.Controls.Add(this.ProxyOffBtn);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.proxyGroupBox);
-            this.Controls.Add(this.eventListBox);
-            this.Controls.Add(this.ProxyOnBtn);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.proxyGroupBox.ResumeLayout(false);
-            this.proxyGroupBox.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.ClientSize = new System.Drawing.Size(628, 177);
+            this.Controls.Add(this.tableLayoutPanel2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Proxy Aç Kapa";
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -124,12 +143,11 @@
         #endregion
 
         private System.Windows.Forms.Button ProxyOnBtn;
-        private System.Windows.Forms.ListBox eventListBox;
-        private System.Windows.Forms.GroupBox proxyGroupBox;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox proxyAdapterTB;
-        private System.Windows.Forms.TextBox normalAdapterTB;
         private System.Windows.Forms.Button ProxyOffBtn;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Label progressTextLabel;
     }
 }
 
