@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.ProxyOnBtn = new System.Windows.Forms.Button();
             this.ProxyOffBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.progressTextLabel = new System.Windows.Forms.Label();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -92,7 +93,6 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.progressBar1, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.progressTextLabel, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -111,15 +111,12 @@
             this.progressBar1.Step = 25;
             this.progressBar1.TabIndex = 6;
             // 
-            // progressTextLabel
+            // notifyIcon1
             // 
-            this.progressTextLabel.AutoSize = true;
-            this.progressTextLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.progressTextLabel.Location = new System.Drawing.Point(3, 137);
-            this.progressTextLabel.Name = "progressTextLabel";
-            this.progressTextLabel.Size = new System.Drawing.Size(622, 20);
-            this.progressTextLabel.TabIndex = 7;
-            this.progressTextLabel.Text = "label1";
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
+            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
             // 
             // MainForm
             // 
@@ -133,9 +130,9 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Proxy Aç Kapa";
+            this.Resize += new System.EventHandler(this.MainForm_Resize);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -147,7 +144,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Label progressTextLabel;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }
 
